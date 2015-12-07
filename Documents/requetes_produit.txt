@@ -1,0 +1,44 @@
+Produit
+	nom_produit VARCHAR2(50),
+	mail VARCHAR2(200) NOT NULL,
+	prix_unitaire NUMBER NOT NULL,
+
+****			Producteur	pk=mail_producteur		****
+
+Ajouter un produit newRecord
+INSERT INTO Produit VALUES ('newRecord.getNom()', mail_producteur, newRecord.getPrix());
+
+Modifier le nom d'un produit (ancien, nouveau)
+UPDATE Produit SET nom_produit='nouveau' WHERE nom_produit='ancien' AND mail=mail_producteur;
+
+Modifier le prix d'un produit (nom, nouveau_prix)
+UPDATE Produit SET prix_unitaire=nouveau_prix WHERE nom_produit='nom' AND mail=mail_producteur;
+
+Afficher les produits
+SELECT nom_produit, prix_unitaire FROM Produit WHERE mail=mail_producteur;
+
+Supprimer un produit (nom)
+DELETE FROM Produit WHERE nom_produit='nom' AND mail=mail_producteur;
+
+****			VPaniers		****
+
+Ajouter un produit newRecord, mail_producteur
+INSERT INTO Produit VALUES ('newRecord.getNom()', mail_producteur, newRecord.getPrix());
+
+Modifier le nom d'un produit (ancien, nouveau)
+UPDATE Produit SET nom_produit='nouveau' WHERE nom_produit='ancien';
+
+Modifier le prix d'un produit (nom, nouveau_prix)
+UPDATE Produit SET prix_unitaire=nouveau_prix WHERE nom_produit='nom';
+
+Afficher les produits
+SELECT nom_produit, prix_unitaire FROM Produit;
+
+Supprimer un produit (nom)
+DELETE FROM Produit WHERE nom_produit='nom';
+
+****			Client		****
+
+Afficher les produits
+SELECT nom_produit, prix_unitaire FROM Produit;
+
