@@ -1,0 +1,21 @@
+PRODUCTEUR
+	mail VARCHAR2(200),
+	ordre_cheque VARCHAR2(100) NOT NULL,
+	paiement_prod_bool CHAR(1) NOT NULL,
+	
+****			VPPaniers		****
+
+Ajouter un producteur (newProducteur)
+INSERT INTO Producteur VALUES ('newProducteur.getMail()', 'newProducteur.getOrdreCheque()', 'F');
+
+Supprimer un producteur (oldProducteur)
+DELETE FROM Producteur WHERE mail='oldProducteur.getMail()';
+
+Modifier ordre_cheque (Producteur, new_ordre_cheque)
+UPDATE Producteur SET ordre_cheque='new_ordre_cheque' WHERE mail='Producteur.getMail()';
+
+Payer producteur (Producteur)
+UPDATE Producteur SET paiement_prod_bool='T' WHERE mail='Producteur.getMail()';
+
+Afficher listes des producteurs
+SELECT producteur.mail, nom, prenom FROM Producteur, Personne WHERE producteur.mail=personne.mail;
