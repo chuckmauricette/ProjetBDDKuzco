@@ -1,0 +1,25 @@
+Ligne_de_commande
+	nom_produit VARCHAR2(50),
+	mail VARCHAR2(200) NOT NULL,
+	nom VARCHAR2(20) NOT NULL,
+	prenom VARCHAR2(20) NOT NULL,
+	prix_unitaire NUMBER NOT NULL,
+	id_ligne_commande NUMBER NOT NULL,
+	id_commande NUMBER NOT NULL,
+
+****			Commande pk=id_commande		****
+
+****		VPPaniers		****
+
+	
+Statistique nombre de produits vendus
+SELECT sum(quantite) FROM Ligne_de_commande;
+
+Statistique produit le plus vendu
+SELECT nom_produit FROM Ligne_de_commande IN (SELECT max(quantite) FROM Ligne_de_commande GROUP BY quantite);
+
+Statistique produit phare
+SELECT ??
+
+Statistique pas Vendu
+SELECT nom_produit FROM Ligne_de_commande IN (SELECT min(quantite) FROM Ligne_de_commande GROUP BY quantite);
